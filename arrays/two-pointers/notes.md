@@ -81,3 +81,62 @@ O(1)
 - Similar logic appears in:
   - 3Sum Closest
   - Minimum difference problems
+
+------------------------------------------------------
+
+## 3. Remove Duplicates from Sorted Array
+
+### Pattern:
+Two Pointers (Slow + Fast Pointer)
+
+### Problem:
+Remove duplicates from a sorted array **in-place** and return the number of unique elements.
+
+---
+
+### Approach:
+- Since array is sorted, duplicates are adjacent
+- Use two pointers:
+  - `i` → scans array
+  - `k` → position to place unique elements
+- First element is always unique
+- For every new unique element:
+  - place it at index `k`
+  - increment `k`
+
+---
+
+### Key Logic:
+- If nums[i] !== nums[i-1] → it's a new unique element
+- Place it at nums[k] and increment k
+
+---
+
+### Time Complexity:
+O(n)
+
+### Space Complexity:
+O(1) (in-place)
+
+---
+
+### Mistakes I Made:
+- Used extra array instead of modifying input
+- Confusion with pointer movement (k++ placement)
+- Overwriting elements incorrectly (elem at 0th index)
+
+---
+
+### Key Learnings:
+- In-place problems require modifying original array
+- Use slow pointer (k) to overwrite duplicates
+- `k` always represents count of unique elements
+- Sorted property helps simplify logic
+
+---
+
+### Pattern Insight:
+- Common pattern: "Overwrite duplicates using slow pointer"
+- Used in:
+  - Remove duplicates problems
+  - In-place array modification
