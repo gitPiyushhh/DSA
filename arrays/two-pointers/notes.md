@@ -140,3 +140,71 @@ O(1) (in-place)
 - Used in:
   - Remove duplicates problems
   - In-place array modification
+
+-----------------------------------------------------
+
+## 4. Squares of a Sorted Array
+
+### Pattern:
+Two Pointers (Compare Extremes) + Result Pointer (k)
+
+### Problem:
+Given a sorted array (can contain negative numbers), return an array of squares in sorted order.
+
+---
+
+### Approach:
+- The largest square will come from either:
+  - Leftmost element (large negative)
+  - Rightmost element (large positive)
+- Use two pointers:
+  - left = 0
+  - right = n - 1
+- Use a result array and fill it from the end:
+  - k = n - 1
+- Compare squares:
+  - If leftSq > rightSq → place leftSq at res[k]
+  - Else → place rightSq at res[k]
+- Move pointers accordingly and decrement k
+
+---
+
+### Key Logic:
+- Compare extremes (left & right)
+- Fill result from end (largest values first)
+
+---
+
+### Time Complexity:
+O(n)
+
+### Space Complexity:
+O(n)
+
+---
+
+### Mistakes I Made:
+- Tried to overwrite original array while still using it for comparisons
+- This caused incorrect values during iteration
+- Did not realize that modifying input can affect future calculations
+
+---
+
+### Key Learnings:
+- If reading and writing overlap → use a separate result array
+- Transformation (like squaring) can break sorted order
+- Always check if original data is still needed before modifying
+- Use result pointer (k) to control placement
+
+---
+
+### Pattern Insight:
+- Use two pointers when:
+  - Array is sorted
+  - Extremes determine result
+- Use extra pointer (k) when building result array
+
+---
+
+### Golden Rule:
+"If modifying input affects future comparisons → use a new array"

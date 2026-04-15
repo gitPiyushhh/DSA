@@ -6,5 +6,5 @@ I am solving problems using JavaScript and documenting key learnings, approaches
 
 ## Progress Tracker
 
-- Total Problems Solved: 3+
+- Total Problems Solved: 4+
 - Current Focus: Two Pointers
